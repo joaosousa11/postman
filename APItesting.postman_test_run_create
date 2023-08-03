@@ -1,0 +1,101 @@
+{
+	"id": "0ad5f45d-c93b-4759-a9a7-4e11053f1a60",
+	"name": "APItesting",
+	"timestamp": "2023-08-03T15:26:31.544Z",
+	"collection_id": "23934291-758ae3ff-565a-4943-a6eb-6ec8ea0827dc",
+	"folder_id": 0,
+	"environment_id": "23934291-da3dab5f-0d27-4f46-b16f-db2d6ac82f43",
+	"totalPass": 9,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-08-03T15:26:30.408Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1e9209f6-5234-4ce0-974f-84b6f6344a8a",
+			"name": "Create Employee",
+			"url": "https://dummy.restapiexample.com/api/v1/create",
+			"time": 598,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status is a non-empty string": true,
+				"Status code is 200": true,
+				"Contains a message property": true,
+				"Validate data object": true,
+				"Name is a non-empty string": true,
+				"Salary is a non-empty string": true,
+				"Age is a non-empty string": true,
+				"Response has required fields": true,
+				"Validate response against saved 'temp_userID' value": true
+			},
+			"testPassFailCounts": {
+				"Status is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Contains a message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate data object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Salary is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Age is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response against saved 'temp_userID' value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				598
+			],
+			"allTests": [
+				{
+					"Status is a non-empty string": true,
+					"Status code is 200": true,
+					"Contains a message property": true,
+					"Validate data object": true,
+					"Name is a non-empty string": true,
+					"Salary is a non-empty string": true,
+					"Age is a non-empty string": true,
+					"Response has required fields": true,
+					"Validate response against saved 'temp_userID' value": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 598,
+	"collection": {
+		"requests": [
+			{
+				"id": "1e9209f6-5234-4ce0-974f-84b6f6344a8a",
+				"method": "POST"
+			}
+		]
+	}
+}
