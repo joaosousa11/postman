@@ -1,0 +1,132 @@
+{
+	"id": "92786d8e-3c9b-4c8a-914b-b79c1d20f608",
+	"name": "APItesting",
+	"timestamp": "2023-08-03T15:26:01.007Z",
+	"collection_id": "23934291-c3276b69-6fc2-4f5d-a00f-45b3c5ba5b4f",
+	"folder_id": 0,
+	"environment_id": "23934291-da3dab5f-0d27-4f46-b16f-db2d6ac82f43",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2023-08-03T15:25:59.312Z",
+	"totalFail": 10,
+	"results": [
+		{
+			"id": "653c7e85-df62-418d-8e26-1603ea3cee8f",
+			"name": "All Employees",
+			"url": "https://dummy.restapiexample.com/api/v1/employees",
+			"time": 684,
+			"responseCode": {
+				"code": 429,
+				"name": "Too Many Requests"
+			},
+			"tests": {
+				"Status is a non-empty string": false,
+				"Status code is 200": false,
+				"Contains a message property": false
+			},
+			"testPassFailCounts": {
+				"Status is a non-empty string": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Contains a message property": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				684
+			],
+			"allTests": [
+				{
+					"Status is a non-empty string": false,
+					"Status code is 200": false,
+					"Contains a message property": false
+				}
+			]
+		},
+		{
+			"id": "47676ae4-f652-4155-8548-474f3c4fd9ea",
+			"name": "Employee 1",
+			"url": "https://dummy.restapiexample.com/api/v1/employee/1",
+			"time": 303,
+			"responseCode": {
+				"code": 429,
+				"name": "Too Many Requests"
+			},
+			"tests": {
+				"Verify response is OK and data is the same": false,
+				"Status code is 200": false,
+				"Contains a message property": false,
+				"Verify that the 'status' property is present in the response": false,
+				"Verify that the 'data' object is present in the response": false,
+				"Validate the id property of the data object": false,
+				"Validate employee_name property": false
+			},
+			"testPassFailCounts": {
+				"Verify response is OK and data is the same": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Contains a message property": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Verify that the 'status' property is present in the response": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Verify that the 'data' object is present in the response": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate the id property of the data object": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate employee_name property": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				303
+			],
+			"allTests": [
+				{
+					"Verify response is OK and data is the same": false,
+					"Status code is 200": false,
+					"Contains a message property": false,
+					"Verify that the 'status' property is present in the response": false,
+					"Verify that the 'data' object is present in the response": false,
+					"Validate the id property of the data object": false,
+					"Validate employee_name property": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 987,
+	"collection": {
+		"requests": [
+			{
+				"id": "653c7e85-df62-418d-8e26-1603ea3cee8f",
+				"method": "GET"
+			},
+			{
+				"id": "47676ae4-f652-4155-8548-474f3c4fd9ea",
+				"method": "GET"
+			}
+		]
+	}
+}
