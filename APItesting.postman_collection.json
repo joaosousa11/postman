@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "758ae3ff-565a-4943-a6eb-6ec8ea0827dc",
+		"name": "APItesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23934291"
+	},
+	"item": [
+		{
+			"name": "All Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.status).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains a message property\", function() {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"Successfully! All records has been fetched.\");\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/employees",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify response is OK and data is the same\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.id).to.eql(1)\r",
+							"    pm.expect(jsonData.data.employee_name).to.eql(\"Tiger Nixon\");\r",
+							"    pm.expect(jsonData.data.employee_salary).to.eql(320800);\r",
+							"    pm.expect(jsonData.data.employee_age).to.eql(61);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains a message property\", function () {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"Successfully! Record has been fetched.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the 'status' property is present in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData).to.have.property('status');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the 'data' object is present in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.have.property('data');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate the id property of the data object\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.data).to.exist;\r",
+							"    pm.expect(responseData.data.id).to.exist;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate employee_name property\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.data).to.be.an('object');\r",
+							"    pm.expect(responseData.data.employee_name).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var responseJSON = pm.response.json();\r",
+							"\r",
+							"// Test the response body structure and values\r",
+							"pm.test(\"Response body structure is valid\", function () {\r",
+							"    pm.expect(responseJSON).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Test the status property\r",
+							"pm.test(\"Status property is present and has a value\", function () {\r",
+							"    pm.expect(responseJSON).to.have.property('status');\r",
+							"    pm.expect(responseJSON.status).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"// Test the data property\r",
+							"pm.test(\"Data property is present and has a value\", function () {\r",
+							"    pm.expect(responseJSON).to.have.property('data');\r",
+							"    pm.expect(responseJSON.data).to.exist.and.to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Test the id property of the data object\r",
+							"pm.test(\"Validate the id property of the data object\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('id');\r",
+							"    pm.expect(responseJSON.data.id).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_name property\r",
+							"pm.test(\"Validate employee_name property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_name');\r",
+							"    pm.expect(responseJSON.data.employee_name).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_salary property\r",
+							"pm.test(\"Validate employee_salary property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_salary');\r",
+							"    pm.expect(responseJSON.data.employee_salary).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_age property\r",
+							"pm.test(\"Validate employee_age property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_age');\r",
+							"    pm.expect(responseJSON.data.employee_age).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employee/{{userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employee",
+						"{{userID}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.status).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains a message property\", function () {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"Successfully! Record has been added.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate data object\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.data).to.be.an('object');\r",
+							"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.data.salary).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.data.age).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Name is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.data.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Salary is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.data.salary).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Salary should not be empty\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Age is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.data.age).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Age should not be empty\");;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has required fields\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.status).to.exist;\r",
+							"    pm.expect(responseData.data).to.exist;\r",
+							"    pm.expect(responseData.message).to.exist;\r",
+							"});\r",
+							"\r",
+							"var responseData = pm.response.json();\r",
+							"var responseUserID = responseData.data.id;\r",
+							"pm.collectionVariables.set(\"temp_userID\", responseUserID);\r",
+							"\r",
+							"// Retrieve the saved \"temp_userID\" value from the variable\r",
+							"pm.test(\"Validate response against saved 'temp_userID' value\", function () {\r",
+							"    var savedUserID = pm.collectionVariables.get(\"temp_userID\");\r",
+							"\r",
+							"    var responseData = pm.response.json();\r",
+							"    var responseUserID = responseData.data.id;\r",
+							"\r",
+							"    pm.expect(responseUserID).to.equal(savedUserID);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {{emp_name}},\r\n    \"salary\": {{emp_salary}},\r\n    \"age\": {{emp_age}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if is a number\r",
+							"pm.test(\"Validate id property\", function () {\r",
+							"    var savedUserID = pm.collectionVariables.get(\"temp_userID\");\r",
+							"    pm.expect(savedUserID).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify response is OK and dat is the same\", function () {\r",
+							"    var savedUserID = pm.collectionVariables.get(\"temp_userID\");\r",
+							"    \r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.id).to.eql(savedUserID);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains a message property\", function () {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"Successfully! Record has been fetched.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the 'status' property is present in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData).to.have.property('status');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the 'data' object is present in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.have.property('data');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate the id property of the data object\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.data).to.exist;\r",
+							"    pm.expect(responseData.data.id).to.exist;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate employee_name property\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.data).to.be.an('object');\r",
+							"    pm.expect(responseData.data.employee_name).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var responseJSON = pm.response.json();\r",
+							"\r",
+							"// Test the response body structure and values\r",
+							"pm.test(\"Response body structure is valid\", function () {\r",
+							"    pm.expect(responseJSON).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Test the status property\r",
+							"pm.test(\"Status property is present and has a value\", function () {\r",
+							"    pm.expect(responseJSON).to.have.property('status');\r",
+							"    pm.expect(responseJSON.status).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"// Test the data property\r",
+							"pm.test(\"Data property is present and has a value\", function () {\r",
+							"    pm.expect(responseJSON).to.have.property('data');\r",
+							"    pm.expect(responseJSON.data).to.exist.and.to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Test the id property of the data object\r",
+							"pm.test(\"Validate the id property of the data object\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('id');\r",
+							"    pm.expect(responseJSON.data.id).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_name property\r",
+							"pm.test(\"Validate employee_name property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_name');\r",
+							"    pm.expect(responseJSON.data.employee_name).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_salary property\r",
+							"pm.test(\"Validate employee_salary property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_salary');\r",
+							"    pm.expect(responseJSON.data.employee_salary).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"// Test the employee_age property\r",
+							"pm.test(\"Validate employee_age property\", function () {\r",
+							"    pm.expect(responseJSON.data).to.have.property('employee_age');\r",
+							"    pm.expect(responseJSON.data.employee_age).to.exist.and.to.be.a('number');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employee/{{temp_userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employee",
+						"{{temp_userID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Contains a message property\", function() {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.eql(\"Successfully! Record has been deleted\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/delete/{{temp_userID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"delete",
+						"{{temp_userID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userID",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "delete_userID",
+			"value": "4070",
+			"type": "string"
+		},
+		{
+			"key": "temp_userID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "emp_name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "emp_salary",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "emp_age",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
