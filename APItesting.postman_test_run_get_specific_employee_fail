@@ -1,0 +1,125 @@
+{
+	"id": "2a5677a5-602e-445f-97a4-d75544d053b1",
+	"name": "APItesting",
+	"timestamp": "2023-08-03T15:41:44.473Z",
+	"collection_id": "23934291-758ae3ff-565a-4943-a6eb-6ec8ea0827dc",
+	"folder_id": 0,
+	"environment_id": "23934291-da3dab5f-0d27-4f46-b16f-db2d6ac82f43",
+	"totalPass": 7,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-08-03T15:41:43.074Z",
+	"totalFail": 8,
+	"results": [
+		{
+			"id": "63a583a7-70f2-4217-b838-8a55f96d238c",
+			"name": "Get Specific Employee",
+			"url": "https://dummy.restapiexample.com/api/v1/employee/9263",
+			"time": 686,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Validate id property": true,
+				"Verify response is OK and dat is the same": false,
+				"Status code is 200": true,
+				"Contains a message property": true,
+				"Verify that the 'status' property is present in the response": true,
+				"Verify that the 'data' object is present in the response": true,
+				"Validate the id property of the data object": false,
+				"Validate employee_name property": false,
+				"Response body structure is valid": true,
+				"Status property is present and has a value": true,
+				"Data property is present and has a value": false,
+				"Validate employee_salary property": false,
+				"Validate employee_age property": false
+			},
+			"testPassFailCounts": {
+				"Validate id property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify response is OK and dat is the same": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Contains a message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the 'status' property is present in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the 'data' object is present in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the id property of the data object": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate employee_name property": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response body structure is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status property is present and has a value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data property is present and has a value": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate employee_salary property": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate employee_age property": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				686
+			],
+			"allTests": [
+				{
+					"Validate id property": true,
+					"Verify response is OK and dat is the same": false,
+					"Status code is 200": true,
+					"Contains a message property": true,
+					"Verify that the 'status' property is present in the response": true,
+					"Verify that the 'data' object is present in the response": true,
+					"Validate the id property of the data object": false,
+					"Validate employee_name property": false,
+					"Response body structure is valid": true,
+					"Status property is present and has a value": true,
+					"Data property is present and has a value": false,
+					"Validate employee_salary property": false,
+					"Validate employee_age property": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 686,
+	"collection": {
+		"requests": [
+			{
+				"id": "63a583a7-70f2-4217-b838-8a55f96d238c",
+				"method": "GET"
+			}
+		]
+	}
+}
