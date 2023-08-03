@@ -1,0 +1,59 @@
+{
+	"id": "fe522605-fd7d-4891-a400-14ced1320302",
+	"name": "APItesting",
+	"timestamp": "2023-08-03T15:30:01.456Z",
+	"collection_id": "23934291-758ae3ff-565a-4943-a6eb-6ec8ea0827dc",
+	"folder_id": 0,
+	"environment_id": "23934291-da3dab5f-0d27-4f46-b16f-db2d6ac82f43",
+	"totalPass": 2,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-08-03T15:30:00.214Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "953f4488-e637-4cbf-abc1-f0b5b8340987",
+			"name": "Delete Employee",
+			"url": "https://dummy.restapiexample.com/api/v1/delete/4855",
+			"time": 691,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Contains a message property": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Contains a message property": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				691
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Contains a message property": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 691,
+	"collection": {
+		"requests": [
+			{
+				"id": "953f4488-e637-4cbf-abc1-f0b5b8340987",
+				"method": "DELETE"
+			}
+		]
+	}
+}
